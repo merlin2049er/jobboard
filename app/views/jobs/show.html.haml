@@ -1,19 +1,11 @@
-%h1  Job Details...
-%br/
+#jobs
+	.job
+		%h2= @job.title
+		%p= @job.description
+		%p= @job.company
+		%button.btn.btn-default= link_to "Apply for Job", @job.url
 
-%h2= @job.title 
-%br/
-%p= @job.category_id 
-%br/
-
-%p= @job.description
-%br/
-%p= @job.company
-%br/
-
-%p= @job.url
-%br/
-
-=link_to "Home", root_path
-=link_to "Edit", edit_job_path(@job)
-=link_to "Delete" ,job_path(@job), method: :delete, data: {confirm: "are you sure?"}
+#links
+	= link_to "Back", root_path, class: "btn btn-sm btn-default"
+	= link_to "Edit", edit_job_path(@job), class: "btn btn-sm btn-default"
+	= link_to "Delete", job_path(@job), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-default"
